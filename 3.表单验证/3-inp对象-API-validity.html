@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 用伪元素改变 type="search" 中 “×” 的样式*/
+        #sc::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            width: 13px;
+            height: 13px;
+            background-color: red;
+        }
+
+        /* 用伪元素去掉 type = "number" 中的上下箭头*/
+        /* input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        } */
+    </style>
+</head>
+<body>
+    <form method="post">
+
+        <input type="text" name="username" id="username" placeholder="请输入" required="required" pattern="^\d{4}$"><br>
+
+        2. type = "search" 类型表示输入的将是一个搜索关键字，有“ × ” <br>
+
+        <input type="search" id="search" placeholder="请输入"><br>
+
+        3. type = "search" 中 “ × ” 的样式可以改变 <br>
+
+        <input type="search" id="sc"><br>
+
+        4. type = "number" ，调用函数控制字符长度；用 step 控制按上下箭头时调整的步长<br>
+        <input type="number" id="numbers" oninput="checkLength(this,5)" step="0.01"> <br>
+
+        5. type="email" <br>
+        <input type="email" id="email" value="" /><br>
+        <input type="submit">
+
+    </form>
+
+    <script>
+        // document.getElementById(“id”)===id，两者是全等的
+        console.log(document.getElementById('username')===username); // true
+
+        // 观察 validity 属性中各属性值的变化
+        console.log(username.validity);
+
+        //简写（直接用ID取代这个document.getElementById)，这种写法不推荐使用，因为容易造成混淆！
+        console.log(search.validity);
+
+        console.log(numbers.validity);
+
+        function checkLength(obj,length) {
+            if(obj.value.length > length) {
+                obj.value = obj.value.substr(0,length);
+            }
+        }
+    </script>
+</body>
+</html>

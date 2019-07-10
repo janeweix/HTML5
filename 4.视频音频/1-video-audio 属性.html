@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. 三个属性：autoplay, controls, loop -->
+     <!--2. 标签内部的文字表示浏览器不支持该标签时显示的内容  -->
+    <!-- <video src="http://video.mukewang.com/mk.mp4" width="640px" autoplay controls loop>
+        您的浏览器不支持 video 标签。
+    </video> -->
+
+    <!-- 1. 可以有多个 source，上一个 source 加载不成功，就加载下一个 -->
+    <!-- 2. 有三种格式的视频，浏览器的支持情况不同 -->
+    <!-- 3. 三个属性：source, preload, poster（video） -->
+    <!-- <video width="640px" autoplay controls loop preload poster = "data/poster.jpg">
+        <source src="data/imooc.mp4" type="video/mp4">
+        <source src="data/imooc.ogv" type="video/ogv">
+        <source src="data/imooc.webm" type="video/webm">
+        <source src="http://video.mukewang.com/mk.mp4">
+        您的浏览器不支持 video 标签。
+    </video> -->
+
+    <!-- audio 标签 -->
+    <audio controls>
+        <source src="horse.ogg" type="audio/ogg">
+        <source src="horse.mp3" type="audio/mpeg">
+        您的浏览器不支持 audio 元素。
+    </audio>
+</body>
+</html>

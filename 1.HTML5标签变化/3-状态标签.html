@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Meter</title>
+</head>
+
+<body>
+	<!-- 安全范围为 200~240。在这个范围内，是绿色；在这个范围之外，就变成黄色 -->
+	<!-- 若 value 值大于 max 的值，js 取到的也是 max 的值；若 value 值小于 min 值，js取到的也是 min 值 -->
+	<!-- optimum="220" 表示最优的值就是 220 -->
+	<meter value="260" min="20" max="380" low="200" high="240" optimum="220"></meter>
+
+	<!-- 以百分比的形式显示电量 -->
+	<meter value="0.75">75%</meter>
+
+	<br>
+
+	<progress value="30" max="100">
+	
+	<!-- 若 progress 没有加结束标签，则下一个 progress 标签和这个 progress 标签就共用一个 value 值 -->
+	<!-- 会有一个加载的效果 -->
+	<!-- <progress max="100"></progress> -->
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <video src="http://video.mukewang.com/mk.mp4" controls id="myVideo" width="640px">
+        您的浏览器不支持 video 属性。
+    </video>
+    <button id="start">开始</button>
+    <button id="pause">暂停</button>
+
+    <script>
+        var v = document.getElementById('myVideo');
+        var startBtn = document.getElementById('start');
+        var pauseBtn = document.getElementById('pause');
+        v.onloadedmetadata = function () {
+            console.log("当前视频播放地址：" + v.currentSrc);
+            console.log("视频总时长：" + v.duration);
+            console.log("当前播放的倍速：" + v.playbackRate);
+            console.log("是否暂停：" + v.paused);
+            console.log("是否结束：" + v.ended);
+            console.log("是否静音：" + v.muted);
+        }
+        v.ontimeupdate = function () {
+            console.log("当前播放时间：" + v.currentTime); // 以秒为单位
+            console.log("当前缓冲量：" + v.buffered.end(0));
+        }
+        v.on = function () {
+            console.log("当前音量：" + v.volume); // 百分比的形式
+        }
+        // 两个方法
+        startBtn.onclick = function () {
+            v.play();
+        }
+        pauseBtn.onclick = function () {
+            v.pause();
+        }
+    </script>
+</body>
+</html>

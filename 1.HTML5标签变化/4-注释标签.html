@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ruby</title>
+</head>
+
+<body>
+	<!-- <ruby> 定义注释或音标  -->
+	<!-- <rp> 告诉那些不支持 ruby元素的浏览器如何去显示（支持的浏览器不显示 <rp> 标签中的内容） -->
+	<!-- <rt> 标记定义对ruby的注释内容文本 -->
+
+	<p>我们来<ruby>夼<rt>Kuang</rt></ruby>一个话题。</p>
+
+	<!-- 注意：<rp> 不要放在 <rt> 标签内 -->
+	<p>我们来<ruby>夼<rp>(</rp>
+			<rt>Kuang</rt>
+			<rp>)</rp>
+        </ruby>一个话题。
+    </p>
+</body>
+
+</html>

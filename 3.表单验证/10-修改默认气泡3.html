@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>密码及邮箱验证</title>
+</head>
+<style>
+    #testForm label {
+        width: 80px;
+        display: inline-block;
+    }
+
+    #testForm input {
+        border: 1px solid #e1e1e1;
+        height: 28px;
+        width: 50%;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <form id="testForm" onsubmit="return check()">
+        <label for="pass1">密码:</label>
+        <input type="password" name="pass1" id="pass1" required="" />
+        <br /><br />
+        <label for="pass2"> 确认密码:</label>
+        <input type="password" name="pass2" id="pass2" required="required" />
+        <br /><br />
+        <label for="email"> Email:</label>
+        <input type="email" name="email" id="email" />
+        <br /><br />
+        <input type="submit" />
+    </form>
+
+    <script language="javascript">
+        console.log(pass1.validity);
+        function check() {
+            var pass1 = document.getElementById("pass1");
+            var pass2 = document.getElementById("pass2");
+            if (pass1.value != pass2.value) {
+                pass2.setCustomValidity("密码不一致");
+                return false
+            }
+            else {
+                pass2.setCustomValidity("");
+            }
+            var email = document.getElementById("email");
+            if (!email.checkValidity())
+                email.setCustomValidity("请输入正确的email地址");
+        }
+    </script>
+
+</body>
+
+</html>

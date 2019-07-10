@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="text" id="username" placeholder="输入用户名" required value="111">
+        <input type="email" id="mail" placeholder="输入邮箱" value="111">
+        <input type="submit">
+    </form>
+
+    <script>
+        var username = document.getElementById('username');
+        var mail = document.getElementById('mail');
+        if(username.checkValidity()) {
+            console.log('用户名不为空，符合');
+        }else {
+            console.log('用户名为空');
+        }
+        if(mail.checkValidity()) {
+            console.log('邮箱地址正确');
+        }else {
+            console.log('邮箱地址不正确');
+        }
+    </script>
+</body>
+</html>

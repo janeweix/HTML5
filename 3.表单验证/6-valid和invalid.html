@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>纯css表单验证美化（invalid和valid）应用案例</title>
+</head>
+<style>
+    .container {
+        position: relative;
+        margin: 100px;
+    }
+
+    input {
+        width: 160px;
+        height: 30px;
+        border: none;
+        outline: none;
+        border: 1px solid #999;
+        border-radius: 4px;
+        text-indent: 3em; /*输入框的内容缩进*/
+        transition: all .5s; /*移动时有动画效果*/
+    }
+
+    span.title {
+        position: absolute;
+        top: 2px;
+        left: 4px;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        transition: all .5s; /*移动时有动画效果*/
+    }
+
+    input:focus,
+    input:hover {
+        text-indent: .2em; 
+    }
+
+    /* 获取兄弟元素 */
+    /* 在 input 被鼠标覆盖或获取到焦点时，span移动  */
+    input:focus+span.title,
+    input:hover+span.title {
+        transform: translateX(-120%);
+    }
+
+    /* 邮箱格式错误时，边框为红色 */
+    input:invalid {
+        border: 1px solid tomato;
+    }
+
+    /* 获取同父级元素 */
+    /* 邮箱格式正确时，label 中显示提示信息，在 input 后面显示 */
+    input:valid~label::after {
+        content: "很棒，您输入邮箱格式正确！";
+    }
+
+    /* 邮箱格式错误时，label 中显示提示信息 */
+    input:invalid~label::after {
+        content: "邮箱格式不对，这是邮箱吗？";
+    }
+
+</style>
+
+<body>
+    <!-- 注意 id 和 type 值尽量不要相同 -->
+    <div class="container">
+        <input id="mail" type="email" required placeholder="your mail">
+        <span class="title">邮箱</span>
+        <label for="mail"></label>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  preload="auto/meta/none" -->
+    <video src="http://video.mukewang.com/mk.mp4" width="640px" id="myVideo" controls>
+        您的浏览器不支持 video 标签。
+    </video>
+
+    <script>
+        var v = document.getElementById('myVideo');
+    </script>
+
+    <!-- <script>
+        v.onloadedmetadata = function () { // 元数据
+            console.log('loadedmetadata');
+        }
+    </script> -->
+
+    <!-- 查看 video 对象的 API 事件 -->
+    <!-- <script>
+        var array =[];
+        console.dir(v); // video 对象上有一系列 API 事件
+        console.dir(array); // 数组原型上有一个 forEach() 方法
+    </script> -->
+
+    <!-- 测试每个事件触发顺序，为避免代码冗余，封装一个函数来控制输出 -->
+
+    <!-- 方法1：多次调用函数 -->
+    <!-- <script>
+        function bindEvent (event) {
+            v['on' + event] = function () { // 元数据
+                console.log(event);
+            }
+        }
+        bindEvent('loadedmetadata');
+        bindEvent('loadstart');
+    </script>     -->
+
+    <!-- 方法2：将事件名存在数组中，调用数组的 forEach() 方法，在方法中调用 bindEvent() 函数 -->
+    <script>
+        // 常用事件
+        var arr = ["loadstart", "progress", "suspend", "abort", "emptied", "stalled", "loadedmetadata", "loadeddata", "canplaythrough", "playing", "waiting", "seeking", "ended", "durationchange", "timeupdate", "play", "seeked", "ratechange", "volumechange", "pause", "error", "canplay"];
+        arr.forEach(function (event) {
+            v['on' + event] = function () { // 元数据
+                console.log(event);
+            }
+        });
+
+        // 触发事件的一系列动作（网络加载和本地加载时，事件触发顺序由差异）：
+        // 打开浏览器
+        // 播放视频
+        // 暂停视频
+        // 调节音量
+        // 拉进度条
+        // 视频播放完毕
+    </script>
+
+</body>
+
+</html>

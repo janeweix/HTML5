@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>:required和:optional综合案例演示：</title>
+</head>
+<style>
+    .container {
+        margin: 40px auto;
+        max-width: 400px;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    label {
+        color: grey;
+        padding-left: 10px;
+    }
+
+    select {
+        display: block;
+        margin-bottom: 1em;
+    }
+
+    input,
+    select,
+    button {
+        margin: 10px 0;
+        padding: .5em 1em;
+    }
+
+    button {
+        border: 2px solid #aa0088;
+        background-color: #cc00aa;
+        color: white;
+        width: 400px;
+        font-weight: bold;
+        padding: .75em 1em;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: #aa0088;
+    }
+
+    input,
+    select {
+        width: 240px;
+        border: 1px solid #888;
+    }
+
+    textarea {
+        width: 390px;
+        color: #888;
+    }
+
+    /*可选表单样式*/
+    input:optional,
+    select:optional {
+        border-right: 3px solid #888;
+        background-color: #f8f8f8;
+        color: #888;
+    }
+
+    /*必选表单样式*/
+    input:required,
+    textarea:required {
+        border-right: 3px solid #aa0088;
+    }
+
+    /*可选表单提示文字*/
+    input:optional+label::after {
+        content: "(可选)";
+    }
+
+    /*必选表单提示文字*/
+    input:required+label::after {
+        content: "(必填)";
+    }
+
+    /*可选表单激活效果*/
+    input:optional:focus,
+    select:optional:focus {
+        box-shadow: 0 0 2px 1px #aaa;
+    }
+
+    /*必选表单激活效果*/
+    input:required:focus,
+    select:required:focus,
+    textarea:required:focus {
+        outline: 0; /* 外边框*/
+        box-shadow: 0 0 2px 1px #aa0088;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form action="#">
+            <input type="name" required><label>名称</label>
+            <input type="email" required><label>邮箱</label>
+            <input type="tel"><label>手机</label>
+            <input type="url"><label>网址</label>
+            <select name="#" id="##">
+                <option value="1">非必填选项一</option>
+                <option value="2">非必填选项二</option>
+                <option value="3">非必填选项三</option>
+                <option value="4">非必填选项四</option>
+            </select>
+            <textarea name="#" id="#" cols="30" rows="10" required>留言 (必填)</textarea>
+            <button>提交表单</button>
+        </form>
+    </div>
+</body>
+
+</html>

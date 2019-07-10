@@ -1,27 +1,30 @@
-# css3 学习笔记
-## 1. css3 背景与渐变
-* 1-background-clip
-* 2-background-origin
-* 3-background-size
-* 4-多重背景图像
-* 5-背景属性整合
-* 6-线性渐变
-* 7-尺寸关键字
-* 8-径向渐变
-* 9-渐变综合案例
+# html5 学习笔记
+## 1. 标签变化
+* 1-结构标签
+* 2-列表标签
+* 3-状态标签
+* 4-注释标签
+* 5-Mark标签
+* 6-output标签
 
-## 2. css3 文本与字体
-* 1-text-shadow
-* 2-word-break
-* 3-word-wrap
-* 4-text-align-last
-* 5-text-justify
-* 6-text-overflow
-* 7-font-face 字体的应用
+## 2. 网页布局
+* （新增标签案例）
 
-## 3. css3 选择器
-* 1-属性选择器
-* 2-动态伪类
-* 3-UI元素状态伪类
-* 4-否定选择器
-* 5-伪元素
+## 3. 表单验证
+* 1-表单属性
+* 2-label
+* 3-inp对象-API-validity
+* 4-checkValidity()
+* 5-require-optional
+* 6-valid 和 invalid
+* 7-表单美化案例
+* 8-修改默认气泡1
+* 9-修改默认气泡2
+* 10-修改默认气泡3
+
+## 4. 视频音频
+* 1-video-audio属性
+* 2-video-audio-API 事件
+* 3-video-audio-API 属性及方法
+
+（待完善）

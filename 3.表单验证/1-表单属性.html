@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>html5表单验证测试</title>
+</head>
+
+<body>
+
+    <div>案例一：表单内容必填；正则表达式验证；formnovalidate，按钮1取消验证，按钮2需要验证</div>
+    <!--formnovalidate应用案例 一个提交禁止，一个不禁止-->
+    <form action="" method="get">
+        <input type="text" placeholder="请输入" required="required" pattern="^\d{4}$">
+
+        <input type="submit" value="提交1" formnovalidate>
+        <br />
+        <input type="submit" value="提交2">
+
+    </form>
+
+    <br /><br />
+
+    <div>案例二：required、pattern测试，novalidate 表单取消验证标签测试</div>
+    <!--novalidate应用案例 -->
+    <form action="" novalidate>
+
+        <input type="text" placeholder="请输入" required="required" pattern="^\d{4}$" >
+
+        <input type="submit" value="提交" > 
+
+    </form>
+    <br /><br />
+
+
+    <div>案例三：autofocus、autocomplete，list特性，datalist测试</div>
+    <!--autofocus -->
+    <form action="" autocomplete="on">
+        <input type="text" value="" name="username" placeholder="自动获得焦点" autofocus />
+
+        <input type="email" name="email" autocomplete="off" placeholder="autocomplete 等于 off">
+
+        <input type="text" list="tips" name="tips" />
+        <dataList id="tips">
+            <option value="测试1" label="test1"></option>
+            <option value="测试2" label="test2"></option>
+            <option value="测试3" label="test3"></option>
+            <option value="测试4" label="test4"></option>
+            <option value="测试5" label="test5"></option>
+        </dataList>
+
+        <input type="submit">
+    </form>
+</body>
+</html>

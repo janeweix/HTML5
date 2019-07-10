@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Output</title>
+</head>
+
+<body>
+	<!-- oninput 事件可以实时监听文本框的输入变化 -->
+	<!-- <output> 标记定义一些输出类型，计算表单结果，配合oninput事件 -->
+	<form oninput="totalPrice.value=parseInt(price.value)*parseInt(number.value)">
+		<input type="text" id="price" value="5000">
+		*<input type="number" id="number" value="1">
+		=<output name="totalPrice" for="price number"></output>
+	</form>
+</body>
+
+</html>
