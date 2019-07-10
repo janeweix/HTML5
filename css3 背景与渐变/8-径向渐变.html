@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 300px;
+            /* 径向渐变，即沿着半径的圆形渐变 */
+            /* background: radial-gradient(center, shape size, start-color, ..., last-color ); */
+            /* 颜色的数值（如50%）表示，从中心点到所有边界点的连线的一半的位置，将这些位置点连接起来，就是该颜色的范围 */
+            /* 1. 默认情况。center 可以缺省 */
+            /* background: radial-gradient(pink 30%, yellow 50%, red); */
+
+            /* 径向渐变——设置形状   圆形、椭圆（默认）*/
+
+
+            /* 径向渐变——尺寸大小关键字 */
+            /* 第一个数值用来设置圆心的位置 。*/
+            /* 注意1：大小和形状是同一个参数，写在一起，不能用逗号隔开。用空格分隔即可 */
+            /* 注意2：椭圆有短轴和长轴，根据这个来判断最近边 */
+            /* 注意3：这个样式要加上前缀，中心点才能生效，否则显示不出来。在写其他渐变时，要把所有兼容版本都写上，这里省略了。 */
+            /* 1. 最近边 */
+            /* background: -webkit-radial-gradient(30% 70%, closest-side ellipse, red, blue); */
+
+            /* 2. 最远边 */
+            /* background: -webkit-radial-gradient(30% 70%, farthest-side ellipse, red, blue); */
+
+            /* 3. 最近角 */
+            /* 3.1 中心点到最近角的距离就是该椭圆的短轴长度；中心点到第二近的角的距离就是该椭圆的长轴长度 */
+            /* background: -webkit-radial-gradient(30% 70%, closest-sideer ellipse, red, blue); */
+
+            /* 4. 最远角 */
+            /* 4.1 中心点到最远角的距离就是该椭圆的长轴长度；中心掉到第二远角的距离就是该椭圆的短轴长度 */
+            /* background: -webkit-radial-gradient(30% 70%, farthest-corner ellipse, red, blue); */
+
+
+            /* 重复渐变 */
+            background: repeating-radial-gradient(red 0%, blue 10%, red 20%); 
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

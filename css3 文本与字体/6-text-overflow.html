@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            width: 200px;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+        p:nth-of-type(1) {
+            text-overflow: clip;
+        }
+        p:nth-of-type(2) {
+            text-overflow: ellipsis;
+        }
+        p:nth-of-type(3) {
+            /* 这个属性值只在火狐浏览器上兼容，Chrome 上没有效果 */
+            text-overflow: ">>";
+        }
+    </style>
+</head>
+<body>
+    <p>bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk</p>
+    <p>bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk</p>
+    <p>bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk</p>
+</body>
+</html>

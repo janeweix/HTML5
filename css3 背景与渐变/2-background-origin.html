@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clip</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    /* 注意，这个盒子的宽高为 350px */
+    div {
+        width: 150px;
+        height: 150px;
+        padding: 50px;
+        border: 50px solid transparent;
+        /* 注意：有了偏移量才能看出效果，分别表示水平和垂直方向的偏移量 */
+        background: url('img/2.jpg') no-repeat 50px 100px;
+        background-origin: border-box;
+        background-origin: padding-box;
+        background-origin: content-box;
+    }
+
+    /* 做 border 的盒子的可视宽高为 350px */
+    .border {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 250px;
+        height: 250px;
+        border: 50px solid rgb(100,200,100,0.5);
+    }
+
+    /* 做 padding 的盒子的可视宽高为 250px */
+    .padding {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 150px;
+        height: 150px;
+        border: 50px solid rgb(100,100,200,0.5);
+    }
+</style>
+</head>
+<body>
+    <!-- 两个 span 是相对于整个页面进行绝对定位的 -->
+    <div></div>
+    <span class="border"></span>
+    <span class="padding"></span>
+    
+</body>
+</html>

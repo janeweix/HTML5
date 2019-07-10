@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*1. 用角度渐变，使方向一致 
+        * 2. 是红色到透明的渐变，将渐变作为背景。有四个渐变图像，用到多重背景。这四个渐变背景组成了一个 background。
+        * 3. 设置背景的大小，为宽高的整除数
+        * 4. 兼容代码
+
+        * 5. 25% 表示占对角线的 25%。若 div 为正方形，则三角形的最长边更顺滑。
+        * 6. 红色到 25% 的位置结束，透明色从 25% 的位置开始。因为两个颜色节点的差为0，所以渐变范围为0。
+        * 7. 45deg = 360 + 45 = 0 + 45； -45deg = 360 + (-45) = 315deg。
+        * 8. 因为三角形在四个角，可以先算好角度和颜色节点的值，再写。
+        */
+
+        /* 
+            主流浏览器及其内核：
+                Safari，Webkit；
+                Chrome，以前是Webkit内核，现在是Blink内核；
+                Firefox，Gecko；
+                Opera，最初是自己的Presto内核，后来是Webkit，现在是Blink内核；
+                IE，Trident。
+         */
+        div {
+            width: 500px; height: 500px; background-size: 100px 100px;
+            background-image: -webkit-linear-gradient(45deg, red 25%, transparent 25%),
+                              -webkit-linear-gradient(-45deg, red 25%, transparent 25%),
+                              -webkit-linear-gradient(45deg, transparent 75%, red 75%),
+                              -webkit-linear-gradient(-45deg, transparent 75%, red 75%);
+
+            background-image: -moz-linear-gradient(45deg, red 25%, transparent 25%),
+                              -moz-linear-gradient(-45deg, red 25%, transparent 25%),
+                              -moz-linear-gradient(45deg, transparent 75%, red 75%),
+                              -moz-linear-gradient(-45deg, transparent 75%, red 75%);
+
+            background-image: -o-linear-gradient(45deg, red 25%, transparent 25%),
+                              -o-linear-gradient(-45deg, red 25%, transparent 25%),
+                              -o-linear-gradient(45deg, transparent 75%, red 75%),
+                              -o-linear-gradient(-45deg, transparent 75%, red 75%);
+
+           background-image:  linear-gradient(45deg, red 25%, transparent 25%),
+                              linear-gradient(-45deg, red 25%, transparent 25%),
+                              linear-gradient(45deg, transparent 75%, red 75%),
+                              linear-gradient(-45deg, transparent 75%, red 75%);                   
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

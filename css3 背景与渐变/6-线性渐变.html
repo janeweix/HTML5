@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 300px;
+            /* 1. 默认方向为从上到下 */
+            /* background: linear-gradient(red, blue); */
+
+            /* 2. 角度渐变 */
+            /* background: linear-gradient( 135deg, red, yellow, blue); */
+
+            /* 3. 颜色节点。如果最后一个颜色不写值，默认是 100% */
+            /* 后一个颜色节点的数值小于前一个颜色节点的数值，颜色变化就会很生硬 */
+            /* 数值的差越大，过渡的范围就越大 */
+            /* background: linear-gradient(to right, red 10%, orange 15%, yellow 30%, green 55%, blue 78%, purple 100%); */
+
+            /* 4. 透明度的渐变。 */
+            /* 表示在 div 的 50% 的位置，透明度就变为 0.9 */
+            /* background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.9)); */
+
+            /* 5. 重复渐变。 */
+            /* 最后一个颜色节点数值表示一次渐变结束的位置，这里总共有5次重复的渐变（100% / 20%） */
+            background: repeating-linear-gradient(90deg, red 0%, blue 10%, red 20%);
+
+            /* 注意格式
+            background: -webkit-linear-gradient( begin-direction, red, blue);
+            background:    -moz-linear-gradient(   end-direction, red, blue);
+            background:      -o-linear-gradient(   end-direction, red, blue);
+            background:         linear-gradient(to end-direction, red, blue);
+            */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

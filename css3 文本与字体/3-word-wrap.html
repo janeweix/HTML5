@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>word-wrap</title>
+<style type="text/css">
+    /* word-wrap 属性允许长单词或 URL 地址换行到下一行 */
+    h1 { width: 800px; margin: 10px auto; background: #abcdef; }
+    h1:nth-child(1) { word-wrap: normal; }
+    h1:nth-child(2) { word-wrap: break-word; }
+    h1:nth-child(3) { word-wrap: normal; }
+    h1:nth-child(4) { word-wrap: break-word; }
+    h1 > span { color: red; }
+</style>
+</head>
+<body>
+    <h1><span>word-wrap:
+            normal;</span><br>bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk
+    </h1>
+    <h1><span>word-wrap:
+            break-word;</span><br>bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk
+    </h1>
+    <h1><span>word-wrap: normal;</span><br>这个字是由100个字母组成的。就出现在爱尔兰作家乔埃斯(James Joyce 1882-1942)作品《芬尼根守灵夜》(Finnegans
+        Wake)的扉页，象征代表亚当和夏娃。（http://www.bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk.com）
+    </h1>
+    <h1><span>word-wrap: break-word;</span><br>这个字是由100个字母组成的。就出现在爱尔兰作家乔埃斯(James Joyce 1882-1942)作品《芬尼根守灵夜》(Finnegans
+        Wake)的扉页，象征代表亚当和夏娃。（http://www.bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk.com）
+    </h1>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+        a {
+            display: block;
+        }
+        a[name] {
+            color: red;
+        }
+        a[name="a2"] {
+            font-size: 24px;
+        }
+        a[class~="two"] {
+            /* 匹配了第一、二个 a 标签 */
+            /* a[class~="a"] ,这样写是不能匹配到元素的*/
+            margin-top: 20px;
+        }
+        a[name^="a"] {
+            text-decoration: none;
+        }
+        a[href$="b"] {
+            border: 1px solid #000;
+        }
+        a[name*="a"] {
+            margin-left: 20px;
+        }
+        a[href|="www"] {
+            /* 选择 attribute 属性值为 "value”或以 "value-" 开头的元素 */
+            text-shadow: 5px 5px 0 yellow;
+        }
+    </style>
+</head>
+<body>
+    <a class="one two" href="www" name="a1" id="aa">超级链接1</a>
+    <a class="two three" href="www-b" name="a2">超级链接2</a>
+    <a href="www-b">超级链接2</a>
+</body>
+</html>
